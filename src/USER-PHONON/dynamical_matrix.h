@@ -44,7 +44,7 @@ namespace LAMMPS_NS {
         void calculateMatrix();
         void dynmat_clear(double **dynmat);
         void create_groupmap();
-        void writeMatrix(double **dynmat);
+        void writeMatrix(long i, double **dynmat);
         void convert_units(const char *style);
         void displace_atom(int local_idx, int direction, int magnitude);
 
@@ -59,6 +59,7 @@ namespace LAMMPS_NS {
         int scaleflag;
         int me;
         bigint *groupmap;
+        int style;
 
         int compressed;            // 1 if dump file is written compressed, 0 no
         int binaryflag;            // 1 if dump file is written binary, 0 no
